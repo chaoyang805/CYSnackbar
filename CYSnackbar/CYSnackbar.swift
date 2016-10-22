@@ -87,7 +87,7 @@ public class CYSnackbar: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func handleNotification(_ notification: NSNotification) {
+    @objc private func handleNotification(_ notification: NSNotification) {
         guard let identifier = notification.userInfo?[CYSnackbarUserInfoKey] as? Int else {
             NSLog("not found snackbar in notification's userInfo")
             return
